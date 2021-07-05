@@ -3,17 +3,34 @@
     --hover-color: #2196f3;
     --link-color: #AFB1B8;
 }
+
 body{
     font-family: roboto, sans-serif;
     letter-spacing: 0.03em;
+}
+a{
+    text-decoration: none;
+}
+ul, li, p, h1, h2,h3{
+    margin: 0;
+    padding: 0;
+}
+ul, li{
     list-style: none;
 }
-
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
 .container{
     width: 1200px;
-    margin-left: 215px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
-
+.title{
+    margin-bottom: 50px;
+}
 /*логотип*/
 .logo {
     font-family: Raleway;
@@ -33,21 +50,20 @@ body{
 /*верхняя навигация*/
 .navigation-line{
     display: flex;
-    flex-direction: row;
     align-items:center; 
 }
 header{ 
-    border: 1px solid #ECECEC;
+    border-bottom: 1px solid #ECECEC;
+    height: 80px;
+    display: flex;
+    align-items: center;
 }
-.navigation, .nav-contacts {
-    list-style: none;
-    text-decoration: none;
-    
+.header-flex{
+    display: flex;
+    justify-content: center;
 }
 .navigation {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     font-size: 14px;
     font-weight: 500;
     line-height: 1.14;
@@ -55,9 +71,20 @@ header{
 }
 .nav-buttons{
     color: black;
-    padding-right: 50px;   
 }
-
+.navigation-item:not(:last-of-type){
+    margin-right: 50px;   
+}
+/* .navigation-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+/* .contact-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 .nav-buttons:hover,
 .nav-buttons:focus{
     color: var(--hover-color);
@@ -65,18 +92,26 @@ header{
 .nav-buttons:active{
     color: #2196f3;
 }
+.nav-buttons.current {
+    color: var(--hover-color);
+}
 .nav-contacts{
     align-items: center;
     padding-left: 0px;
     display: inline-flex; 
+    margin-left: auto;
 }
 .nav-email {
    color: var(--grey-color);
-   padding-left: 231px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 .nav-tel{
     color: var(--grey-color);
-    padding-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .nav-email:hover,
 .nav-email:focus {
@@ -86,15 +121,24 @@ header{
 .nav-tel:focus{
     color: var(--hover-color);
 }
-.nav-email, .nav-tel, .logo, .nav-buttons {
-    text-decoration: none;
+.nav-email:hover .contact-icon,
+.nav-email:focus .contact-icon{
+    fill: var(--hover-color);
 }
-
+.nav-tel:hover .contact-icon,
+.nav-tel:focus .contact-icon{
+    fill: var(--hover-color);
+}
 /*главная секция*/
 .main-section {
     background-color: #2F303A;
-    background-image: url("../images/hero-image.jpg");
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../images/hero-image.jpg");
+    max-width: 1600px;
+    min-height: 600px;
     background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+    margin: 0 auto;
 }
 .central-section{
     display: flex;
@@ -109,12 +153,10 @@ header{
     text-transform: uppercase;
     letter-spacing: 0.06em;   
     margin: 0px;
-    padding-top: 200px;
     text-align: center;
 }
 .main-button {
     margin-top: 30px;
-    margin-bottom: 200px;
     color: #ffffff;
     background-color:var(--hover-color);
     width: 200px;
@@ -126,18 +168,24 @@ header{
 }
 
 /*princips section*/
+.section{
+    padding: 94px 0;
+}
 .princips-list{
     display: flex;
-    justify-content: center;
-    padding-top: 94px;
+    padding-left: 0px;
 }
 .princips:not(::last-child){
     margin-right: 30px;
 }
 .princips-title {
-    font-size: 18px;
+    
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    line-height: 1.14;
+    font-size: 14px;
     font-weight: 700;
-    line-height: 2;
 }
 .princips-text{
     color: var(--grey-color);
@@ -148,14 +196,9 @@ h2{
     line-height: 1.16;
     font-weight: bold;
 }
-.princips-list{
-    list-style-type: none;
-    padding-left: 0px;
-}
+
 .princips-list h3{
-    text-transform: uppercase;
-    line-height: 1.14;
-    font-size: 14px;
+    
 }
 .princips {
     font-size: 14px;
@@ -173,28 +216,11 @@ h2{
     background-size: 270px 120px;
     margin-bottom: 30px;
 }
-/*кнопки*/
-.button{
-    font-family: roboto;
-    font-size: 16px;
-    line-height: 1.6;
-    font-weight: 500;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    margin-right: 8px;
-}
-.button:hover, .button:focus{
-    background-color: var(--hover-color);
-    color:#ffffff;
-}
-
 
 /**activities**/
-
 .activities{
     display: flex;
-    padding-top: 94px;
+    padding-top: 0;
 }
 .activities-title{
     text-align: center;
@@ -209,34 +235,29 @@ h2{
 }
 /**our team section**/
 .our-team{
-    padding-top: 94px;
-    display: flex;
-    flex-direction: column;
     background-color: #F5F4FA;
 }
 .team-title{
     text-align: center;
 }
 .team-list{
-    padding-left: 0px;
-    display: flex;   
-    line-height: 19px;
-    list-style: none;
-    margin-top: 0px;
-    margin-bottom: 94px;
+    display: flex;
 }
-
 .team-card{
     background-color: #ffffff;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
     width: 270px;
+}
+.team-card:not(:last-child){
     margin-right: 30px;
 }
 .cardname{
    text-align: center;
     font-size: 16px;
     font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 .role{
     text-align: center;
@@ -244,17 +265,17 @@ h2{
     color: var(--grey-color);
     font-weight: 400;
 }
+
 /**social icons*/
 .social-list{
     list-style: none;
     display: flex;
     justify-content: space-between;
-    padding: 16px 32px 30px;
-    
+    margin: 16px 32px 30px;
 }
-.social-list-item{
+/* .social-list-item{
     margin: 0px;
-}
+} */
 .social-list-link{
     display: flex;
     align-items: center;
@@ -264,25 +285,31 @@ h2{
    border-radius: 50%;
    fill: var(--link-color);
 }
-.social-list-icon{
-   width: 20px;
-   height: 20px;
-}
+/* .social-list-icon{
+   width="20px" height="20px"
+} */
 
 .social-list-link:hover,
 .social-list-link:focus{
   fill: #ffffff;
   background-color: var(--hover-color);
 }
+.contact-icon{
+    fill: var(--grey-color);
+    margin-right: 10px;
+}
+.contact-icon:hover,
+.contact-icon:focus{
+    fill: var(--hover-color);
+}
 
 /** clients section**/
 .regular-clients{
-    margin-top: 94px;
+    
 }
 .clients-title{
     display: flex;
     justify-content: center;
-    margin: 0px auto 50px;;
 }
 .clients-logo-list{
     padding: 0px;
@@ -315,21 +342,26 @@ h2{
 /*нижняя часть*/
 .footer{
     background-color:#2F303A;
+    padding: 60px 0;
 }
-.address{
-    font-size: 14px;
-    font-style: normal;
-    line-height: 1.7;
-    color: #ffffff;
-}
+
 .footer-info{
-    margin: 0px;
-    padding: 20px 0px 60px 0px;
+    margin-top: 20px;
     text-decoration: none;
     list-style: none;
     font-size: 14px;
     font-style: normal;
     line-height: 1.7;
+    color: #ffffff;
+}
+.footer-blocks{
+    display: flex;
+}
+.footer-side{
+    margin-right: 70px;
+}
+.footer-side .logo{
+    color: #ffffff;
 }
 .nav-email-down, .nav-tel-down{
     color: rgba(255, 255, 255, 0.6);
@@ -345,15 +377,11 @@ h2{
 .nav-tel-down:hover, .nav-tel-down:focus{
     color: var(--hover-color);
 }
-.footer {
-    padding-top: 60px;
-    margin-top: 94px;
-}
-.footer-blocks{
+.footer-container{
     display: flex;
 }
 .footer-social{
-    margin-left: 70px;
+    margin-top: 12px;
 }
 .footer-social .social-list{
     margin:0px;
@@ -362,12 +390,9 @@ h2{
     justify-content: flex-start;
 }
 .footer-social .social-list-item{
-    
     background-color: #FFFFFF1A;
     border-radius: 50%;
     margin: 0px 10px 0px 0px;
-    border: 1px;
-    box-shadow:0px 4px 4px 0px;
 }
 .footer-social .social-list-icon{
     fill: #ffffff;
@@ -375,48 +400,69 @@ h2{
 .social-list-title{
     color: #ffffff;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 1.14;
+    margin-bottom: 20px;
 }
-/*портфолио проекты*/
+/*портфолио */
+/*filters*/
 .filters{
-    padding-left: 0px;
-    margin-top: 94px;
-    margin-bottom: 0px;
+    margin-bottom: 50px;
    display: flex;
    justify-content: center;
-   list-style: none;
 }
-.filters li{
-    margin-right: 0px;
+.filters-item:not(:last-child){
+    margin-right: 8px;
 }
+/*кнопки*/
 .button{
     padding: 6px 22px;
+    font-family: roboto;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
 }
+.button:hover, .button:focus{
+    background-color: var(--hover-color);
+    color:#ffffff;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    ;
+}
+/*projects*/
 .projects-list{
     display: flex;
     flex-wrap: wrap;
-    padding-top: 34px;
-    padding-left: 0px;
-    margin-top: 0px;
-    
+    justify-content: space-between;
 }
 
-.project{
-    list-style: none;
+/* .project{
     border: 1px solid #EEEEEE;
-    margin-bottom: 30px;
-}
+} */
 .project:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);            
 }
-
-.title-h3, .project p{
-    margin: 20px 24px;
+.project{
+    margin-bottom: 30px;
+    border: 1px solid #EEEEEE;
 }
-.project:not(:nth-child(3n+3)){
-    margin-right: 30px;
-
+.project h3{
+    font-weight: 700;
+    font-style: bold;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
 }
 .project p{
     color: var(--grey-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.87;
+}
+.card-signature{
+    padding: 20px 24px;
+}
+.card-set{
+    margin-bottom: -30px;
 }
