@@ -35,7 +35,7 @@ img {
     padding: 0 15px;
 }
 .title {
-    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 /*логотип*/
 .logo {
@@ -70,10 +70,12 @@ header {
 }
 .navigation {
     display: flex;
+    margin-left: 93px;
+}
+.navigation-item{
     font-size: 14px;
     font-weight: 500;
     line-height: 1.14;
-    margin-left: 93px;
 }
 .nav-buttons {
     color: black;
@@ -260,8 +262,8 @@ h2 {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
-    margin-top: 30px;
-    margin-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 .role {
     text-align: center;
@@ -275,7 +277,7 @@ h2 {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    margin: 16px 32px 30px;
+    padding: 16px 32px 30px;
 }
 /* .social-list-item{
     margin: 0px;
@@ -326,15 +328,15 @@ h2 {
     align-items: center;
     width: 170px;
     height: 90px;
-    fill: var(--grey-color);
-    border: 1px solid #afb1b8;
+    fill: var(--link-color);
+    border: 1px solid var(--link-color);
     box-sizing: border-box;
     border-radius: 4px;
 }
-.clients-logo {
+/* .clients-logo {
     width: 106px;
     height: 60px;
-}
+} */
 
 .clients-logo-link:hover,
 .clients-logo-link:focus {
@@ -356,6 +358,9 @@ h2 {
     font-style: normal;
     line-height: 1.7;
     color: #ffffff;
+}
+.footer-item:not(:last-child){
+    margin-bottom: 9px;
 }
 .footer-blocks {
     display: flex;
